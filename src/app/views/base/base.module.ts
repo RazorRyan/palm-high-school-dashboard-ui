@@ -48,6 +48,8 @@ import { NavbarsComponent } from './navbars/navbars.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 
+//import { DashboardComponent } from '../dashboard/dashboard.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { BaseRoutingModule } from './base-routing.module';
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
     ProgressbarModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    //DashboardComponent
   ],
   declarations: [
     CardsComponent,
@@ -74,7 +77,8 @@ import { BaseRoutingModule } from './base-routing.module';
     PopoversComponent,
     ProgressComponent,
     TooltipsComponent,
-    NavbarsComponent
+    NavbarsComponent,
+    //DashboardComponent
   ]
 })
 export class BaseModule { }
