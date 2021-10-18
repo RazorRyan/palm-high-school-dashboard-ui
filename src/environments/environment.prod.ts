@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  palmHighSchoolResultsUrl: "https://highschoolrecordkeepingapi.herokuapp.com/api"
 };
