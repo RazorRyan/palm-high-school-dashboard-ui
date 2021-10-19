@@ -3,7 +3,7 @@ import { getStyle, hexToRgba } from "@coreui/coreui/dist/js/coreui-utilities";
 import { CustomTooltips } from "@coreui/coreui-plugin-chartjs-custom-tooltips";
 import { PalmHighschoolServiceService } from "../../services/palm-highschool-service.service";
 import { StudentResults } from "../models/StudentResults.model";
-import { ChartDataSets, ChartOptions, ChartType } from "chart.js";
+import { ChartColor, ChartDataSets, ChartOptions, ChartType } from "chart.js";
 import { Label } from "ng2-charts";
 import { AverageResults } from "../models/AverageResults.model";
 
@@ -22,7 +22,9 @@ export class DashboardComponent implements OnInit {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
-  barChartLabels: string[] = [];
+  backgroundColor: ChartColor[] = ['255','99','132'];
+  studentBarChartLabels: string[] = ['Avg student scores'];
+  subjectBarChartLabels: string[] = ['Avg subject scores'];
   barChartType: ChartType = "bar";
   barChartLegend = true;
   barChartPlugins = [];
@@ -40,11 +42,13 @@ export class DashboardComponent implements OnInit {
       .subscribe((result) => {
         this.studentAvgResult = result;
         console.log(this.studentAvgResult);
-        //this.barChartLabels = this.studentAvgResult.map(item => item.key);
+        //this.studentBarChartLabels = this.studentAvgResult.map(item => item.key);
         this.studentAvgResult.forEach((element) => {
           this.studentAvgScoredChartData.push({
             data: [element.value],
             label: element.key,
+            backgroundColor: 'purple',
+            borderColor: 'blue'
           });
         });
       });
@@ -54,11 +58,13 @@ export class DashboardComponent implements OnInit {
       .subscribe((result) => {
         this.subjectAvgResult = result;
         console.log(this.subjectAvgResult);
-        //this.barChartLabels = result.map(item => item.key);
+        //this.subjectBarChartLabels = result.map(item => item.key);
         this.subjectAvgResult.forEach((element) => {
           this.subjectAvgScoredChartData.push({
             data: [element.value],
             label: element.key,
+            backgroundColor: 'green',
+            borderColor: 'yellow'
           });
         });
       });

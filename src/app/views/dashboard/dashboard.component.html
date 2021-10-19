@@ -88,7 +88,7 @@
             </div>
             <div class="card-body">
               <div class="chart-wrapper">
-                <canvas baseChart [datasets]="studentAvgScoredChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                <canvas baseChart [datasets]="studentAvgScoredChartData" [labels]="studentBarChartLabels" [options]="barChartOptions"
                   [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
                 </canvas>
               </div>
@@ -99,13 +99,13 @@
               Average Subject Scores
               <div class="card-header-actions">
                 <a href="http://www.chartjs.org">
-                  <small class="text-muted">docs</small>
+                  <small class="text-muted">Avg</small>
                 </a>
               </div>
             </div>
             <div class="card-body">
               <div class="chart-wrapper">
-                <canvas baseChart class="chart" [datasets]="subjectAvgScoredChartData" [labels]="barChartLabels"
+                <canvas baseChart class="chart" [datasets]="subjectAvgScoredChartData" [labels]="subjectBarChartLabels"
                   [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"
                   (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
               </div>
